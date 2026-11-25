@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        function query(){
+            var ret = confirm("네이버로 이동하시겠습니까?");
+            return ret;
+        }
+
+        function noAction(e){
+            e.preventDefault();
+        }
+    </script>
+</head>
+<body>
+    <h3>preventDefault</h3>
+    <hr>
+    <a href="http://www.naver.com" onclick="return query()">네이버로 이동</a>
+    <hr>
+    <input type="checkbox">20233076</input>
+    <input type="checkbox" onclick="noAction(event)">임해주</input>
+</body>
+</html>

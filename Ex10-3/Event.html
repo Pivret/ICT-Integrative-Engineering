@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>test</title>
+    <script>
+        function init(){
+            let p1 = document.getElementById("p1");
+            p1.onmouseover = over;
+
+            let p2 = document.getElementById("p2");
+            p2.addEventListener("mouseover", over);
+
+            let p3 = document.getElementById("p3");
+            p3.onmouseover = function(){
+                this.style.backgroundColor="orchid";
+            }
+
+            function over(){
+                this.style.backgroundColor="orchid";
+            }
+        }
+    </script>
+</head>
+<body onload="init()">
+    <h3>이름 색 바꾸기</h3>
+    <hr>
+    <h3>HTML 태그</h3>
+    <hr>
+    <p onmouseover="this.style.backgroundColor='orchid'">
+        20233076임해주
+    </p>
+    <h3>이벤트 리스너 프로퍼</h3>
+    <hr>
+    <p id="p1">
+        20233076임해주
+    </p>
+    <h3>메소드 이용</h3>
+    <hr>
+    <p id="p2">
+        20233076임해주
+    </p>
+    <h3>익명함수 이용</h3>
+    <hr>
+    <p id="p3">
+        20233076임해주
+    </p>
+</body>
+
+</html>

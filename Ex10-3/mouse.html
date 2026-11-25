@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            background: skyblue;
+            width: 250px;
+        }
+    </style>
+
+    <script>
+        function where(e){
+            let div1 = document.getElementById("div1");
+            let text = "버튼="+e.button+"<br>";
+            text += "(screenX, screenY)="+e.screenX+","+e.screenY+"<br>";
+            text += "(clientX, clientY)="+e.clientX+","+e.clientY+"<br>";
+            text += "(offsetX, offsetY)="+e.offsetX+","+e.offsetY+"<br>";
+            text += "(x,y)="+e.x+","+e.y+"\n";
+            div1.innerHTML = text;
+        }
+        function hideMenu(){
+            alert("오른쪽 클릭<컨텍스트 메뉴> 금지");
+            return false;
+        }
+        document.oncontextmenu=hideMenu;
+    </script>
+</head>
+
+<body>
+    <h3>Test</h3>
+    <hr>
+    <p>Testing</p>
+    <img src="../media/image.png" onmousemove="where(event)" alt="miami" />
+    <div id="div1"></div>
+</body>
+
+</html>

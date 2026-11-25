@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>onload로 이미지 크기 출력</title>
+    <script>
+        function changeImage() {
+            var sel = document.getElementById("sel");
+            var img = document.getElementById("img");
+            var index = sel.selectedIndex;
+            img.onload = function () {
+                var txt1 = document.getElementById("txt1");
+                txt1.innerHTML = img.width + "x" + img.height;
+                txt2.innerHTML = "선택 인덱스: "+index;
+            }
+            img.src = sel.options[index].value;
+        }
+    </script>
+</head>
+
+<body onload="changeImage()">
+    <h3>onload로 이미지 크기 출력</h3>
+    <hr>
+    <form>
+        <select id="sel" onchange="changeImage()">
+            <option value="media/apple.png">애플
+            <option value="media/samsung.png">삼성
+            <option value="media/lg.png">LG
+        </select><br>
+        <span id="txt1">이미지 크기</span><br>
+        <span id="txt2">선택 인덱스</span>
+    </form>
+    <p><img id="img" src="media/apple.png"></p>
+</body>
+
+</html>
